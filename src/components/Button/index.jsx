@@ -1,4 +1,4 @@
-import styles from './button.module.css';
+import styles from './button.module.css'
 
 export const Button = ({ children, outline, href, ...rest }) => {
     if (href) {
@@ -6,12 +6,12 @@ export const Button = ({ children, outline, href, ...rest }) => {
             <a href={href} className={outline ? styles.outline : styles.btn}>
                 {children}
             </a>
-        );
+        )
     }
 
     return (
         <button className={outline ? styles.outline : styles.btn} {...rest}>
             {children}
         </button>
-    );
+    )
 }

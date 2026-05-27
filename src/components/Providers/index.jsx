@@ -1,4 +1,4 @@
-import { IconButton } from "../IconButton"
+import { IconButton } from '../IconButton'
 import google from './google.png'
 import github from './github.png'
 

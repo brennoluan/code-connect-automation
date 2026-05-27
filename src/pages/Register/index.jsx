@@ -1,23 +1,22 @@
-import { AuthFormContainer } from "../../components/AuthFormContainer"
-import { Checkbox } from "../../components/Checkbox"
-import { Input } from "../../components/Input"
-import { Label } from "../../components/Label"
-import Typography from "../../components/Typography"
-import { Button } from "../../components/Button"
+import { AuthFormContainer } from '../../components/AuthFormContainer'
+import { Checkbox } from '../../components/Checkbox'
+import { Input } from '../../components/Input'
+import { Label } from '../../components/Label'
+import Typography from '../../components/Typography'
+import { Button } from '../../components/Button'
 import banner from './banner-register.png'
-import { IconArrowFoward } from "../../components/icons/IconArrowFoward"
-import { IconLogin } from "../../components/icons/IconLogin"
-import { Form } from "../../components/Form"
-import { Fieldset } from "../../components/Fieldset"
-import { TextDivider } from "../../components/TextDivider"
-import { Providers } from "../../components/Providers"
-import { Link } from "../../components/Link"
+import { IconArrowFoward } from '../../components/icons/IconArrowFoward'
+import { IconLogin } from '../../components/icons/IconLogin'
+import { Form } from '../../components/Form'
+import { Fieldset } from '../../components/Fieldset'
+import { TextDivider } from '../../components/TextDivider'
+import { Providers } from '../../components/Providers'
+import { Link } from '../../components/Link'
 import styles from './register.module.css'
-import { useAuth } from "../../hooks/useAuth"
-import { useNavigate } from "react-router"
+import { useAuth } from '../../hooks/useAuth'
+import { useNavigate } from 'react-router'
 
 export const Register = () => {
-
     const { register } = useAuth()
     const navigate = useNavigate()
 
@@ -33,18 +32,19 @@ export const Register = () => {
         } else {
             console.error(response.error)
         }
-
     }
 
     return (
         <AuthFormContainer bannerSrc={banner}>
-            <Typography variant="h1" color="--offwhite">Cadastro</Typography>
-            <Typography variant="h2" color="--offwhite">Olá! Preencha seus dados.</Typography>
+            <Typography variant="h1" color="--offwhite">
+                Cadastro
+            </Typography>
+            <Typography variant="h2" color="--offwhite">
+                Olá! Preencha seus dados.
+            </Typography>
             <Form action={onSubmit}>
                 <Fieldset>
-                    <Label>
-                        Nome
-                    </Label>
+                    <Label>Nome</Label>
                     <Input
                         name="name"
                         id="name"
@@ -53,9 +53,7 @@ export const Register = () => {
                     />
                 </Fieldset>
                 <Fieldset>
-                    <Label>
-                        E-mail
-                    </Label>
+                    <Label>E-mail</Label>
                     <Input
                         name="email"
                         id="email"
@@ -65,9 +63,7 @@ export const Register = () => {
                     />
                 </Fieldset>
                 <Fieldset>
-                    <Label>
-                        Senha
-                    </Label>
+                    <Label>Senha</Label>
                     <Input
                         name="password"
                         id="password"
@@ -88,7 +84,7 @@ export const Register = () => {
                 <Typography variant="body" color="--offwhite">
                     Já tem conta?
                 </Typography>
-                <Link href='/auth/login'>
+                <Link href="/auth/login">
                     <Typography variant="body" color="--highlight-green">
                         Faça seu login!
                     </Typography>

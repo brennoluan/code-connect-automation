@@ -10,17 +10,17 @@ import { vi } from 'vitest'
  * @returns {Object} Objeto retornado por render() do RTL
  */
 export const renderWithRouter = (ui, options = {}) => {
-  const { initialEntries = ['/'], ...renderOptions } = options
-  
-  const Wrapper = ({ children }) => {
-    return (
-      <MemoryRouter initialEntries={initialEntries}>
-        {children}
-      </MemoryRouter>
-    )
-  }
+    const { initialEntries = ['/'], ...renderOptions } = options
 
-  return render(ui, { wrapper: Wrapper, ...renderOptions })
+    const Wrapper = ({ children }) => {
+        return (
+            <MemoryRouter initialEntries={initialEntries}>
+                {children}
+            </MemoryRouter>
+        )
+    }
+
+    return render(ui, { wrapper: Wrapper, ...renderOptions })
 }
 
 /**
@@ -32,22 +32,21 @@ export const renderWithRouter = (ui, options = {}) => {
  * @returns {Function} Função mock para vi.mock
  */
 export const createUseAuthMock = (authState = {}) => {
-  const {
-    isLoading = false,
-    isAuthenticated = false,
-    user = null,
-    login = vi.fn(() => ({ success: true, user })),
-    register = vi.fn(() => ({ success: true, user })),
-    logout = vi.fn(),
-  } = authState
+    const {
+        isLoading = false,
+        isAuthenticated = false,
+        user = null,
+        login = vi.fn(() => ({ success: true, user })),
+        register = vi.fn(() => ({ success: true, user })),
+        logout = vi.fn(),
+    } = authState
 
-  return () => ({
-    isLoading,
-    isAuthenticated,
-    user,
-    login,
-    register,
-    logout,
-  })
+    return () => ({
+        isLoading,
+        isAuthenticated,
+        user,
+        login,
+        register,
+        logout,
+    })
 }
-

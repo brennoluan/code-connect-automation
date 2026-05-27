@@ -1,9 +1,8 @@
-import { useEffect } from "react"
-import { useAuth } from "../../hooks/useAuth"
-import { useNavigate } from "react-router"
+import { useEffect } from 'react'
+import { useAuth } from '../../hooks/useAuth'
+import { useNavigate } from 'react-router'
 
 export const Logout = () => {
-
     const { logout } = useAuth()
     const navigate = useNavigate()
 
@@ -13,5 +12,4 @@ export const Logout = () => {
     }, [logout, navigate])
 
     return null
-
 }
