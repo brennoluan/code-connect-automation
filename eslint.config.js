@@ -3,6 +3,8 @@ import globals from 'globals'
 import reactHooks from 'eslint-plugin-react-hooks'
 import reactRefresh from 'eslint-plugin-react-refresh'
 import { defineConfig, globalIgnores } from 'eslint/config'
+import pluginCypress from 'eslint-plugin-cypress'
+import eslintConfigPrettier from 'eslint-config-prettier'
 
 export default defineConfig([
     globalIgnores(['dist']),
@@ -24,6 +26,15 @@ export default defineConfig([
         },
         rules: {
             'no-unused-vars': ['error', { varsIgnorePattern: '^[A-Z_]' }],
+            ...eslintConfigPrettier.rules,
+        },
+    },
+    {
+        files: ['cypress/**/*.js'],
+        extends: [pluginCypress.configs.recommended],
+        rules: {
+            'cypress/no-unnecessary-waiting': 'off',
+            ...eslintConfigPrettier.rules,
         },
     },
 ])
