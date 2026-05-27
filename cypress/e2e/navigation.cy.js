@@ -22,8 +22,10 @@ describe('Navegação do Feed para Post', () => {
         cy.get('input[name="email"]').should('be.visible')
 
         // Fazer login
-        cy.get('input[name="email"]').clear().type('teste@example.com')
-        cy.get('input[name="password"]').clear().type('senha123')
+        cy.get('input[name="email"]').clear()
+        cy.get('input[name="email"]').type('teste@example.com')
+        cy.get('input[name="password"]').clear()
+        cy.get('input[name="password"]').type('senha123')
         cy.get('button[type="submit"]').should('be.visible').click()
 
         // Aguardar redirecionamento para o feed

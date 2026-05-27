@@ -1,5 +1,5 @@
 import { describe, it, expect } from 'vitest'
-import { render, screen } from '@testing-library/react'
+import { screen } from '@testing-library/react'
 import { Link } from '../../../components/Link'
 import { renderWithRouter } from '../../utils'
 
@@ -33,7 +33,7 @@ describe('Link', () => {
     })
 
     it('deve funcionar com className customizada', () => {
-        const { container } = renderWithRouter(
+        renderWithRouter(
             <Link href="/test" className="custom-class">
                 Custom Link
             </Link>

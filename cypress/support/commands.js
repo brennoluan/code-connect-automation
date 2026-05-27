@@ -15,10 +15,9 @@ Cypress.Commands.add('registerUser', (name, email, password) => {
     // Interceptar o submit do formulário e chamar a função de submit manualmente
     cy.get('form').then(($form) => {
         const form = $form[0]
-        const formData = new FormData(form)
 
         // Simular o comportamento esperado pelo componente
-        cy.window().then((win) => {
+        cy.window().then(() => {
             const event = new Event('submit', {
                 bubbles: true,
                 cancelable: true,

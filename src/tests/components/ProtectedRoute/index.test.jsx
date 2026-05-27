@@ -1,5 +1,5 @@
 import { describe, it, expect, vi, beforeEach } from 'vitest'
-import { render, screen } from '@testing-library/react'
+import { screen } from '@testing-library/react'
 import { ProtectedRoute } from '../../../components/ProtectedRoute'
 import { renderWithRouter, createUseAuthMock } from '../../utils'
 
