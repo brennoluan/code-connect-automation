@@ -1,6 +1,6 @@
 .container {
     display: flex;
-    gap: 55px;  
+    gap: 55px;
     flex-wrap: wrap;
 }
 
